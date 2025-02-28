@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="main__section">
+    <div class="left__bar">
+      <h1 class="logo">2do</h1>
+      <div class="add__button">
+        <img src="./assets/images/plus.png">
+      </div>
+    </div>
+    <div class="main__container">
+      <h2 class="main__header">What are my tasks today?</h2>
+      <div class="cards__container">
+        <div class="card">
+          <div class="card__title">
+            <h3 class="title">Card Title</h3>
+            <img src="./assets/images/dots.png">
+          </div>
+          <div class="added__task"></div>
+          <div class="add__card">
+            <button>+</button>
+            <p>Add a card</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <div class="task__modal hidden">
+    <div class="modal__content">
+      <span class="close__modal">&times;</span>
+      <h2>Add new task</h2>
+      <span class="modal__title"></span>
+      <form action="">
+        <label for="taskName">Task name: </label>
+        <input type="text" id="taskName" name="taskName" required>
+
+        <label for="priority">Priority: </label>
+        <select id="priority" name="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <button class="addTaskModalButton" type="submit">Add task</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
