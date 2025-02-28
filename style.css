@@ -64,6 +64,7 @@ body{
   display: flex;  
   flex-wrap: wrap;
   gap: 1.5rem;
+  align-items: start;
 }
 
 .main__header{
@@ -83,6 +84,7 @@ body{
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
 .card__title img{
@@ -94,6 +96,21 @@ body{
 
 .card__title img:hover{
   transform: scale(1.2);
+}
+
+.added__task{
+  margin-bottom: 10px;
+  background: #5f6266;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addedTask__Title{
+  text-wrap: wrap;
+  overflow: hidden;
+  font-size: 1rem;
+  font-family: monospace;
 }
 
 .add__card{
