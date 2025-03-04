@@ -104,9 +104,32 @@ addTaskModalButton.addEventListener("click", (event) => {
   closeModal();
 });
 
+  //Delete card function
+function showDeleteCard(event, card){
+  const deleteCard = document.createElement("div");
+  deleteCard.classList.add("delete__card");
 
+  deleteCard.textContent = "Delete card";
+  deleteCard.style.top = `${event.clientY}px`;
+  deleteCard.style.left = `${event.clientX}px`;
 
+  document.querySelectorAll(".delete__card").forEach(menu => menu.remove());
+  document.body.appendChild(deleteCard); 
 
+  deleteCard.addEventListener("click", (event) => {
+    card.remove();
+    deleteCard.remove();
+  });
+};
+
+cardsContainer.addEventListener("click", (event) => {
+    const dots = event.target.closest(".card__title img");
+
+    if(dots){
+      const card = event.target.closest(".card");
+      showDeleteCard(event, card);
+    }
+});
 
 
 
