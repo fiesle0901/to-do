@@ -106,6 +106,7 @@ addTaskModalButton.addEventListener("click", (event) => {
 
   //Delete card function
 function showDeleteCard(event, card){
+  event.stopPropagation();
   const deleteCard = document.createElement("div");
   deleteCard.classList.add("delete__card");
 
@@ -120,6 +121,7 @@ function showDeleteCard(event, card){
     card.remove();
     deleteCard.remove();
   });
+  document.addEventListener("click", () => deleteCard.remove(), { once: true });
 };
 
 cardsContainer.addEventListener("click", (event) => {
