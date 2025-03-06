@@ -92,6 +92,15 @@ addTaskModalButton.addEventListener("click", (event) => {
   const addedTaskTitle = document.createElement("p");
   addedTaskTitle.textContent = taskName;
   addedTaskTitle.classList.add("addedTask__Title");
+
+  //rename added task title
+  addedTaskTitle.setAttribute("contenteditable","true");
+  addedTaskTitle.addEventListener("keydown", (event) =>{
+    if(event.key==="Enter"){
+      event.preventDefault();
+      addedTaskTitle.blur();
+    }
+  });
   
   addedTask.appendChild(addedTaskTitle);
 
@@ -132,9 +141,6 @@ cardsContainer.addEventListener("click", (event) => {
       showDeleteCard(event, card);
     }
 });
-
-
-
 
 
 

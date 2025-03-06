@@ -127,12 +127,21 @@ body{
   cursor: pointer;
 }
 
+.added__task:hover{
+  outline: 2px solid white;
+}
+
 .addedTask__Title{
   overflow: hidden;
   font-size: 1rem;
   font-family: monospace;
   overflow-wrap: break-word;
   max-height: 200px;
+}
+
+.addedTask__Title:focus{
+  font-style: italic;
+  outline: none;
 }
 
 .add__card{
