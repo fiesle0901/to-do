@@ -10,9 +10,9 @@ function closeModal() {
 
 function getPriorityColor(priority) {
   switch (priority) {
-    case "low": return "green";
-    case "medium": return "orange";
-    case "high": return "red";
+    case "low": return "#89AC46";
+    case "medium": return "#FFA725";
+    case "high": return "#E50046";
     default: return "gray";
   }
 }
@@ -24,6 +24,7 @@ const closeModalButton = document.querySelector(".close__modal");
 const modalTitle = document.querySelector(".modal__title");
 const taskNameInput = document.querySelector("#taskName");
 const priorityInput = document.querySelector("#priority");
+const taskDateInput = document.querySelector("#taskDate");
 const addTaskModalButton = document.querySelector(".addTaskModalButton");
 let activeCard = null;
 
@@ -82,6 +83,7 @@ addTaskModalButton.addEventListener("click", (event) => {
 
   const taskName = taskNameInput.value.trim();
   const priority = priorityInput.value;
+  const taskDate = taskDateInput.value;
 
   if (!taskName) return; 
 
@@ -93,6 +95,10 @@ addTaskModalButton.addEventListener("click", (event) => {
   addedTaskTitle.textContent = taskName;
   addedTaskTitle.classList.add("addedTask__Title");
 
+  const addedTaskDate = document.createElement("span");
+  addedTaskDate.textContent = taskDate;
+  addedTaskDate.classList.add("addedTask__Date");
+
   //rename added task title
   addedTaskTitle.setAttribute("contenteditable","true");
   addedTaskTitle.addEventListener("keydown", (event) =>{
@@ -102,13 +108,14 @@ addTaskModalButton.addEventListener("click", (event) => {
     }
   });
   
-  addedTask.appendChild(addedTaskTitle);
+  addedTask.append(addedTaskTitle, addedTaskDate);
 
   const addedTaskContainer = activeCard.querySelector(".addedTask__Container");
   addedTaskContainer.appendChild(addedTask);
 
   taskNameInput.value = "";
   priorityInput.value = "low";
+  taskDateInput.value = "";
 
   closeModal();
 });

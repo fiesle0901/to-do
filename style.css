@@ -120,6 +120,9 @@ body{
 }
 
 .added__task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
   background: #5f6266;
   padding: 8px 10px;
@@ -144,6 +147,9 @@ body{
   outline: none;
 }
 
+.addedTask__Date{
+  font-size: 0.6rem;
+}
 .add__card{
   display: flex;
   align-items: center;
