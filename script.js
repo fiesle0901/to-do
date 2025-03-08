@@ -83,9 +83,12 @@ addTaskModalButton.addEventListener("click", (event) => {
 
   const taskName = taskNameInput.value.trim();
   const priority = priorityInput.value;
-  const taskDate = taskDateInput.value;
+  const taskDate = taskDateInput.value.trim();
 
-  if (!taskName) return; 
+  if (!taskName || !taskDate){
+      alert("Fill all details");
+      return;
+  } 
 
   const addedTask = document.createElement("div");
   addedTask.classList.add("added__task");

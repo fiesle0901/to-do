@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+  --blue: #4D55CC;
+}
+
 *{
   margin:0;
   padding:0;
@@ -40,7 +44,7 @@ body{
 }
 
 .main__section::-webkit-scrollbar-thumb {
-  background: #4D55CC;
+  background: var(--blue);
   border-radius: 10px;
 }
 
@@ -62,18 +66,48 @@ body{
 
 .logo{
   font-size:2rem;
+  color: #4D55CC;
+}
+
+.main__header{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nyanCat__image{
+  height: 70px;
+  margin-left: 20px;
+}
+
+.add__button{
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: opacity 0.315s ease-in-out;
 }
 
 .add__button img{
   width:40px;
   height:40px;
-  cursor: pointer;
   transition: 0.325s;
 }
 
 .add__button img:hover{
   transform: rotate(30deg);
   opacity:0.8;
+}
+
+.add__button:hover::after{
+  position: absolute;
+  right: -100px;
+  bottom: -30%; 
+  content: "Add a card";
+  white-space: nowrap;
+  background: var(--blue);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
 }
 
 .main__container{
@@ -150,6 +184,7 @@ body{
 .addedTask__Date{
   font-size: 0.6rem;
 }
+
 .add__card{
   display: flex;
   align-items: center;
@@ -245,7 +280,9 @@ form button{
 
 .delete__card{
   position: absolute;
-  background: white;
+  background: var(--blue);
+  color: white;
+  border-radius: 6px;
   padding: 5px 10px;
   border-radius: 3px;
   cursor: pointer;
